@@ -1,3 +1,4 @@
+
 local colors = {
 	blue         = '#0083aa',
 	gray         = '#4e4e4e',

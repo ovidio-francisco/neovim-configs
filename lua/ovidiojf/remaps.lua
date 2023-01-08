@@ -60,6 +60,15 @@ vim.keymap.set('n', 'm', 'i<cr><esc>')
 vim.keymap.set('n', '<leader>m', 'o<esc>')
 vim.keymap.set('n', '<leader>M', 'O<esc>')
 
+
+-- Comments
+vim.keymap.set('n', '<leader>;' , ':call nerdcommenter#Comment(0,"toggle")<cr>')
+vim.keymap.set('v', '<leader>;' , ':call nerdcommenter#Comment(0,"toggle")<cr>')
+vim.keymap.set('n', '<leader>cs', ':call nerdcommenter#Comment(0,"sexy")<cr>')
+vim.keymap.set('n', '<leader>A' , ':call nerdcommenter#Comment(0,"append")<cr>')
+vim.keymap.set('n', '<leader>I' , ':call nerdcommenter#Comment(0,"insert")<cr>i')
+
+
 vim.keymap.set('n', '<leader><F2>', function()
 	vim.cmd.write()
 	vim.cmd.source()

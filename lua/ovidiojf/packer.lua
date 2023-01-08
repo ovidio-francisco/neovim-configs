@@ -1,4 +1,3 @@
-
 return require('packer').startup(function(use)
 
 	use 'wbthomason/packer.nvim' -- Packer can manage itself
@@ -49,11 +48,11 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	use "terrortylor/nvim-comment"
+	use 'preservim/nerdcommenter'
 end)
 
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
-
-
