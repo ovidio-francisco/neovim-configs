@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 
 vim.keymap.set('n', '<tab>', '<c-w>w')
+vim.keymap.set('n', '<s-tab>', '<c-w>W')
+vim.keymap.set('i', '<s-tab>', '<esc><c-w>W')
 
 vim.keymap.set("n", " ", "<nop>")
 vim.keymap.set("n", "<leader>dl", vim.cmd.Ex)
@@ -42,6 +44,75 @@ vim.keymap.set('v', '<leader>b', '"_')
 vim.keymap.set('v', '<leader>p', '"_dP')
 
 
+-- Scroll screen and move the cursor in the opposite direction
+vim.keymap.set('n', '<c-q>',   '<c-y>gk')
+vim.keymap.set('n', '<c-s>',   '<c-e>gj')
+
+vim.keymap.set('n', '<leader>lw', function ()
+	vim.opt.wrap = not vim.opt.wrap:get()
+end)
+
+
+-- Disable/Enable highlight in search
+vim.keymap.set('n', '<f8>', ':set hlsearch!<cr>', {silent=true})
+
+
+-- Break undo sequence, start new change. See i_CTRL-G_u
+vim.keymap.set('i', '<space>', '<space><c-g>u')
+vim.keymap.set('i', '<cr>', '<cr><c-g>u')
+vim.keymap.set('i', '.', '.<c-g>u')
+vim.keymap.set('i', ',', ',<c-g>u')
+
+-- Indent/Unindent and reselect
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+
+
+
+
+-- Change a misspelling word to the first vim suggestion
+vim.keymap.set('n', '<leader>=', '1z=')
+
+
+
+local bgcolor = nil
+vim.keymap.set('n', '<f5>', function ()
+	if bgcolor == nil then
+		bgcolor = 'black'
+	else
+		bgcolor = nil
+	end
+	vim.api.nvim_set_hl(0, "Normal", { bg = bgcolor })
+end)
+
+
+
+vim.keymap.set('n', '<f6>', function ()
+	ToggleShowBreaks('  → ')
+	ToggleShowBlanks()
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vim.keymap.set('n', '<f4>', function() -- ZenMode Distraction Free Writing
+	require("zen-mode").toggle({
+		window = {
+			width = .5 -- width will be x% of the editor width
+		}
+	})
+end)
 
 
 local builtin = require('telescope.builtin')
@@ -60,17 +131,18 @@ vim.keymap.set('n', 'm', 'i<cr><esc>')
 vim.keymap.set('n', '<leader>m', 'o<esc>')
 vim.keymap.set('n', '<leader>M', 'O<esc>')
 
+vim.keymap.set('n', '<bs>', 'g;')
 
 -- Comments
-vim.keymap.set('n', '<leader>;' , ':call nerdcommenter#Comment(0,"toggle")<cr>')
-vim.keymap.set('v', '<leader>;' , ':call nerdcommenter#Comment(0,"toggle")<cr>')
-vim.keymap.set('n', '<leader>cs', ':call nerdcommenter#Comment(0,"sexy")<cr>')
-vim.keymap.set('n', '<leader>A' , ':call nerdcommenter#Comment(0,"append")<cr>')
-vim.keymap.set('n', '<leader>I' , ':call nerdcommenter#Comment(0,"insert")<cr>i')
+vim.keymap.set('n', '<leader>;',  [[:call nerdcommenter#Comment(0,"toggle")<cr>]])
+vim.keymap.set('v', '<leader>;',  [[:call nerdcommenter#Comment(0,"sexy")<cr>]])
+vim.keymap.set('n', '<leader>cs', [[:call nerdcommenter#Comment(0,"sexy")<cr>]])
+vim.keymap.set('n', '<leader>A',  [[:call nerdcommenter#Comment(0,"append")<cr>]])
+vim.keymap.set('n', '<leader>I',  [[:call nerdcommenter#Comment(0,"insert")<cr>i]])
 
 
 vim.keymap.set('n', '<leader><F2>', function()
-	vim.cmd.write()
+vim.cmd.write()
 	vim.cmd.source()
 	print("source")
 end)
@@ -108,3 +180,9 @@ vim.keymap.set('n', '<F24>', function()
 		vim.opt.showmode = true
 	end
 end)
+
+
+
+
+
+

@@ -11,13 +11,15 @@ vim.opt.shiftwidth = 4
 
 vim.opt.smartindent = true
 
+vim.opt.linebreak = true
+
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.updatetime = 50
 
 vim.opt.spell = false
-vim.opt.spelllang = 'pt,en' -- test: amox lovx amor love
+vim.opt.spelllang = 'pt,en' -- test: amox lovx amor love 
 
 vim.opt.clipboard = 'unnamedplus'
 
@@ -32,9 +34,15 @@ vim.opt.updatetime = 2000
 
 vim.opt.virtualedit = 'onemore,block'
 
+vim.opt.autoread = false
+
 vim.cmd('autocmd CursorHold * echo ""')
 
 vim.opt.showmode = false
+
+vim.g.NERDSpaceDelims = 1
+vim.g.NERDCompactSexyComs = 1
+
 
 
 
