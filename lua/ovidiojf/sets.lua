@@ -13,6 +13,7 @@ vim.opt.linebreak = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
 
 vim.opt.updatetime = 50
 

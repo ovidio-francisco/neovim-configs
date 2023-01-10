@@ -8,8 +8,6 @@ require("ovidiojf.remaps")
 
 
 
--- vim.cmd.source('../../vimscripts/marckdown-config.vim')
-
 
 
 

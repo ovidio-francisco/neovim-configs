@@ -13,9 +13,11 @@ require("nvim-tree").setup({
 	},
 
 	view = {
+		signcolumn = "yes",
 		mappings = {
 			list = {
 				{ key = "u", action = "dir_up" },
+				{ key = "v", action = "vsplit" },
 			},
 		},
 	},
@@ -31,6 +33,7 @@ require("nvim-tree").setup({
 				modified = true,
 			},
 			glyphs = {
+				modified = "+",
 				git = {
 					unstaged = "",
 					staged = "✓",
@@ -43,6 +46,27 @@ require("nvim-tree").setup({
 			},
 		}
 	},
+	diagnostics = {
+		enable = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
+		--[[ severity = {
+		   [     min = vim.diagnostic.severity.HINT,
+		   [     max = vim.diagnostic.severity.ERROR,
+		   [ }, ]]
+		icons = {
+			hint = "",
+			info = "",
+			warning = "▲",
+			error = "✘",
+		},
+	},
+      modified = {
+        enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = true,
+      },
+
 	filters = {
 		dotfiles = true,
 	},

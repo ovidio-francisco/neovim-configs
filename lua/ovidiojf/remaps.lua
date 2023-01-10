@@ -122,10 +122,14 @@ vim.keymap.set('v', 'af', 'Va{V')
 vim.keymap.set('n', '<c-c><c-c>', '0D')
 
 
+vim.keymap.set('n', '<F15>', ':SymbolsOutline<cr>')
+
 
 vim.keymap.set('n', '<F1>', function ()
 
-	if require('nvim-tree.view').is_visible() then
+   -- [     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+
+	if #vim.api.nvim_list_wins() == 2 and require('nvim-tree.view').is_visible() then
 		vim.cmd('NvimTreeClose')
 	else
 		vim.cmd('q')

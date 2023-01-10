@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 	use 'dkarter/bullets.vim'
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-
+	use 'simrat39/symbols-outline.nvim'
 
 	use({
 		'rose-pine/neovim',
@@ -58,9 +58,14 @@ return require('packer').startup(function(use)
 		'nvim-tree/nvim-tree.lua',
 		requires = {
 			'nvim-tree/nvim-web-devicons', -- optional, for file icons
-		},
-		tag = 'nightly' -- optional, updated every week. (see issue #1193)
+		}
 	}
+
+
+
+	-- https://github.com/ray-x/navigator.lua   -- Promissor 
+	-- Source code analysis and navigate tool
+
 
 
 end)
