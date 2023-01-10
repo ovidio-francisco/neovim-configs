@@ -1,7 +1,5 @@
 vim.opt.guicursor = "n-v-c-ci-sm-o:block,i-ve:ver25,r-cr:hor20"
 
-
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -42,7 +40,5 @@ vim.opt.showmode = false
 
 vim.g.NERDSpaceDelims = 1
 vim.g.NERDCompactSexyComs = 1
-
-
 
 
