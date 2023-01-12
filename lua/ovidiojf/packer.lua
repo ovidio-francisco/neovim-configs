@@ -10,6 +10,9 @@ return require('packer').startup(function(use)
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 	use 'simrat39/symbols-outline.nvim'
+	use 'lervag/vimtex'
+	use 'jiangmiao/auto-pairs'
+
 
 	use({
 		'rose-pine/neovim',
@@ -61,6 +64,10 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 
 
 	-- https://github.com/ray-x/navigator.lua   -- Promissor 
