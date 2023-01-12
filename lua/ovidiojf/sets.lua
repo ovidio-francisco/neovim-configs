@@ -1,4 +1,6 @@
-vim.opt.guicursor = "n-v-c-ci-sm-o:block,i-ve:ver25,r-cr:hor20"
+-- vim.opt.guicursor = "n-v-c-ci-sm-o:block,i-ve:ver25,r-cr:hor20"
+-- vim.opt.guicursor = "n-i-v-ve-c-ci-sm-o:block,r-cr:hor20,i:blinkwait700-blinkoff400-blinkon250"
+vim.opt.guicursor = "n-i-v-ve-c-ci-sm-o:block,r-cr:hor20,i:blinkwait70-blinkoff40-blinkon25"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -14,6 +16,9 @@ vim.opt.linebreak = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+
+vim.opt.showmatch = true
+vim.opt.matchtime = 2
 
 vim.opt.updatetime = 50
 
