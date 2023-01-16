@@ -20,6 +20,7 @@ vim.keymap.set('n', 'K', 'kJ')
 
 vim.keymap.set('i', '<c-l>', '<esc>')
 vim.keymap.set('n', '<c-l>', ':copy.<cr>')
+vim.keymap.set('n', 'gl',    ':copy.<cr>')
 
 vim.keymap.set('n', '<c-j>', ':move.+1<cr>==')
 vim.keymap.set('n', '<c-k>', ':move.-2<cr>==')
