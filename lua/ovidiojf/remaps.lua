@@ -14,6 +14,7 @@ vim.keymap.set('n', '<F2>', ':w<cr>')
 
 vim.keymap.set('n', '<leader><tab>', vim.cmd.bnext)
 vim.keymap.set('n', '<leader><s-tab>', vim.cmd.bprev)
+vim.keymap.set('n', '<leader>b', ':b ')
 
 vim.keymap.set('n', 'g.', 'ylP')
 vim.keymap.set('n', 'K', 'kJ')
@@ -38,8 +39,8 @@ vim.keymap.set('n', '<leader>dd', '"_dd')
 vim.keymap.set('n', '<leader>D', '"_D')
 vim.keymap.set('n', '<leader>C', '"_C')
 vim.keymap.set('n', '<leader>S', '"_S')
-vim.keymap.set('n', '<leader>b', '"_')
-vim.keymap.set('v', '<leader>b', '"_')
+vim.keymap.set('n', '<leader>B', '"_')
+vim.keymap.set('v', '<leader>B', '"_')
 
 vim.keymap.set('v', '<leader>p', '"_dP')
 
