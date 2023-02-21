@@ -34,6 +34,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-p>'] = cmp.mapping.select_prev_item(),
 	['<C-n>'] = cmp.mapping.select_next_item(),
 	['<C-m>'] = cmp.mapping.confirm({ select = true }),
+	-- ['<CR>'] = cmp.mapping.confirm({ select = true }),
+	-- ['<f10>'] = cmp.mapping.confirm({ select = true }),
 	-- ['<tab>'] = cmp.mapping.confirm({ select = true }),
 	["<C-y>"] = cmp.config.disable,
 	["<C-e>"] = cmp.config.disable,

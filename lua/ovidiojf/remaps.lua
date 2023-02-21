@@ -52,7 +52,7 @@ vim.keymap.set('n', '<c-s>', '<c-e>gj')
 
 -- Break undo sequence, start new change. See i_CTRL-G_u
 vim.keymap.set('i', '<space>', '<space><c-g>u')
-vim.keymap.set('i', '<cr>', '<cr><c-g>u')
+-- vim.keymap.set('i', '<cr>', '<cr><c-g>u')
 vim.keymap.set('i', '.', '.<c-g>u')
 vim.keymap.set('i', ',', ',<c-g>u')
 
