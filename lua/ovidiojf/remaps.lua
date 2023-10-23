@@ -1,5 +1,7 @@
+---@diagnostic disable: undefined-global, undefined-field
 vim.g.mapleader = ' '
 
+vim.keymap.set('n', '<c-z>', ':echo "do nothing :)"<cr>')
 
 vim.keymap.set('n', '<s-tab>', '<c-w>w')
 vim.keymap.set('i', '<s-tab>', '<esc><c-w>w')
@@ -21,7 +23,7 @@ vim.keymap.set('n', 'K', 'kJ')
 
 vim.keymap.set('i', '<c-l>', '<esc>')
 vim.keymap.set('n', '<c-l>', ':copy.<cr>')
-vim.keymap.set('n', 'gl',    ':copy.<cr>')
+vim.keymap.set('n', 'gl', ':copy.<cr>')
 
 vim.keymap.set('n', '<c-j>', ':move.+1<cr>==')
 vim.keymap.set('n', '<c-k>', ':move.-2<cr>==')
@@ -67,7 +69,7 @@ vim.keymap.set('n', '<f7><f7>', ':set cursorline!<CR>')
 -- Disable/Enable highlight in search
 vim.keymap.set('n', '<f8>', ':set hlsearch!<cr>', { silent = true })
 
-vim.keymap.set('n', '<f9>', ':ToggleDiag<cr>')
+vim.keymap.set('n', '<f9>', ':silent ToggleDiag<cr>')
 
 
 vim.keymap.set('n', '<leader>lw', function()
@@ -86,8 +88,8 @@ vim.keymap.set('n', '<leader>fd', builtin.diagnostics)
 vim.keymap.set('n', '<leader>frf', builtin.lsp_references)
 vim.keymap.set('n', '<leader>fws', builtin.lsp_workspace_symbols)
 vim.keymap.set('n', '<leader>fgf', builtin.git_files)
-vim.keymap.set('n', '<leader>fgc', builtin.git_commits	)
-vim.keymap.set('n', '<leader>fgs', builtin.git_status	)
+vim.keymap.set('n', '<leader>fgc', builtin.git_commits)
+vim.keymap.set('n', '<leader>fgs', builtin.git_status)
 vim.keymap.set('n', '<leader>fc', builtin.colorscheme)
 vim.keymap.set('n', '<leader>fk', builtin.keymaps)
 vim.keymap.set('n', '<leader>fhl', builtin.highlights)
@@ -114,7 +116,7 @@ vim.keymap.set('n', '<leader>A', [[:call nerdcommenter#Comment(0,"append")<cr>]]
 vim.keymap.set('n', '<leader>I', [[:call nerdcommenter#Comment(0,"insert")<cr>i]])
 
 
-vim.keymap.set('n', '<f3>', ':NvimTreeToggle<cr>', {silent = true})
+vim.keymap.set('n', '<f3>', ':NvimTreeToggle<cr>', { silent = true })
 
 
 -- Select a function
@@ -127,22 +129,19 @@ vim.keymap.set('n', '<c-c><c-c>', '0D')
 vim.keymap.set('n', '<F15>', ':SymbolsOutline<cr>')
 
 
-vim.keymap.set('n', '<F1>', function ()
-
-   -- [     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+vim.keymap.set('n', '<F1>', function()
+	-- [     if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
 
 	if #vim.api.nvim_list_wins() == 2 and require('nvim-tree.view').is_visible() then
 		vim.cmd('NvimTreeClose')
 	else
 		vim.cmd('q')
 	end
-
 end)
 
 
-vim.keymap.set('n', '<f7><f8>', function ()
-
-	if vim.opt.relativenumber:get()  then
+vim.keymap.set('n', '<f7><f8>', function()
+	if vim.opt.relativenumber:get() then
 		vim.keymap.set('n', 'j', 'gj')
 		vim.keymap.set('n', 'k', 'gk')
 		vim.opt.relativenumber = false

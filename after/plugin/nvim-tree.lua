@@ -1,4 +1,24 @@
+local function my_on_attach(bufnr)
+  local api = require "nvim-tree.api"
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- custom mappings
+  vim.keymap.set('n', 'u',     api.tree.change_root_to_parent,        opts('Up'))
+  vim.keymap.set('n', 'v',     api.node.open.vertical,                opts('Open: Vertical Split'))
+  vim.keymap.set('n', 's',     api.node.open.vertical,                opts('Open: Vertical Split'))
+  vim.keymap.set('n', '<C-s>', api.node.run.system,                   opts('Run System'))
+
+end
+
+
 require("nvim-tree").setup({
+	on_attach = my_on_attach,
 	sort_by = "case_sensitive",
 	disable_netrw = false,
 	hijack_cursor = false,
@@ -12,15 +32,15 @@ require("nvim-tree").setup({
 		},
 	},
 
-	view = {
-		signcolumn = "yes",
-		mappings = {
-			list = {
-				{ key = "u", action = "dir_up" },
-				{ key = "v", action = "vsplit" },
-			},
-		},
-	},
+	--[[ view = {
+	   [     signcolumn = "yes",
+	   [     mappings = {
+	   [         list = {
+	   [             { key = "u", action = "dir_up" },
+	   [             { key = "v", action = "vsplit" },
+	   [         },
+	   [     },
+	   [ },   ]]
 	renderer = {
 		group_empty = false,
 		icons = {
@@ -50,10 +70,10 @@ require("nvim-tree").setup({
 		enable = true,
 		show_on_dirs = true,
 		show_on_open_dirs = true,
-		--[[ severity = {
-		   [     min = vim.diagnostic.severity.HINT,
-		   [     max = vim.diagnostic.severity.ERROR,
-		   [ }, ]]
+		severity = {
+			min = vim.diagnostic.severity.HINT,
+			max = vim.diagnostic.severity.ERROR,
+		}, 
 		icons = {
 			hint = "",
 			info = "",
@@ -61,11 +81,11 @@ require("nvim-tree").setup({
 			error = "✘",
 		},
 	},
-      modified = {
-        enable = true,
-        show_on_dirs = true,
-        show_on_open_dirs = true,
-      },
+	  modified = {
+		enable = true,
+		show_on_dirs = true,
+		show_on_open_dirs = true,
+	  },
 
 	filters = {
 		dotfiles = true,

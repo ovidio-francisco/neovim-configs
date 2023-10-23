@@ -1,6 +1,4 @@
--- vim.opt.guicursor = "n-v-c-ci-sm-o:block,i-ve:ver25,r-cr:hor20"
--- vim.opt.guicursor = "n-i-v-ve-c-ci-sm-o:block,r-cr:hor20,i:blinkwait700-blinkoff400-blinkon250"
--- vim.opt.guicursor = "n-i-v-ve-c-ci-sm-o:block,r-cr:hor20,i:blinkwait70-blinkoff40-blinkon25"
+---@diagnostic disable: undefined-global
 vim.opt.guicursor = "n-v-ve-c-sm-o:block,i-ci:ver25,r-cr:hor20,i:blinkwait70-blinkoff40-blinkon25"
 
 vim.opt.number = true
