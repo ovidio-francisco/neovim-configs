@@ -45,5 +45,6 @@ vim.opt.showmode = false
 
 vim.g.NERDSpaceDelims = 1
 vim.g.NERDCompactSexyComs = 1
+vim.g.user_emmet_leader_key='<c-c>'
 
 

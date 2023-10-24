@@ -4,7 +4,7 @@ require("ovidiojf")
 
 -- TSUpdate para atualizar o TreeSitter
 -- PackerSync para atualizar as plugins
---	antes abrir lua/ovidiojf/packer.lua e executar :so
+	--	antes abrir lua/ovidiojf/packer.lua e executar :so
 
 
 --[[ todo: deixar o keybind do ; dinâmico.
@@ -15,5 +15,9 @@ require("ovidiojf")
 
 --[[ criar um atalho para comentar parágravos com o nerdcommenter
    [     <leader>cip vip{nerdcommenter} ]]
+
+-- https://www.baeldung.com/linux/vim-neovim-configs
+-- https://vi.stackexchange.com/questions/12794/how-to-share-config-between-vim-and-neovim
+
 
 
