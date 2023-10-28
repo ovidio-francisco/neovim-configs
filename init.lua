@@ -2,6 +2,9 @@ require("ovidiojf")
 
 
 
+---@diagnostic disable-next-line: undefined-global
+vim.cmd('source ~/.vimrc')
+
 -- TSUpdate para atualizar o TreeSitter
 -- PackerSync para atualizar as plugins
 	--	antes abrir lua/ovidiojf/packer.lua e executar :so

@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 	use 'simrat39/symbols-outline.nvim'
 	use 'lervag/vimtex'
-	-- use 'jiangmiao/auto-pairs'
+	use 'jiangmiao/auto-pairs'
 	use 'mattn/emmet-vim'
 
 
@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
