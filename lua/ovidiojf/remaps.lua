@@ -19,18 +19,18 @@ vim.keymap.set("i", "<C-h>",           function() vim.lsp.buf.signature_help() e
 
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files)
-vim.keymap.set('n', '<leader>fb', builtin.buffers)
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics)
+vim.keymap.set('n', '<leader>ff',  builtin.find_files)
+vim.keymap.set('n', '<leader>fb',  builtin.buffers)
+vim.keymap.set('n', '<leader>fd',  builtin.diagnostics)
 vim.keymap.set('n', '<leader>frf', builtin.lsp_references)
 vim.keymap.set('n', '<leader>fws', builtin.lsp_workspace_symbols)
-vim.keymap.set('n', '<leader>gf', builtin.git_files)
-vim.keymap.set('n', '<leader>gc', builtin.git_commits)
-vim.keymap.set('n', '<leader>gs', builtin.git_status)
-vim.keymap.set('n', '<leader>fc', builtin.colorscheme)
-vim.keymap.set('n', '<leader>fk', builtin.keymaps)
+vim.keymap.set('n', '<leader>gf',  builtin.git_files)
+vim.keymap.set('n', '<leader>gc',  builtin.git_commits)
+vim.keymap.set('n', '<leader>gs',  builtin.git_status)
+vim.keymap.set('n', '<leader>fc',  builtin.colorscheme)
+vim.keymap.set('n', '<leader>fk',  builtin.keymaps)
 vim.keymap.set('n', '<leader>fhl', builtin.highlights)
-vim.keymap.set('n', '<leader>fg', function()
+vim.keymap.set('n', '<leader>fg',  function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end) -- Needs sudo pacman -S ripgrep
 
@@ -46,7 +46,18 @@ vim.keymap.set('n', '<f5>', function()
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = bgcolor })
 end)
 
+vim.keymap.set('n', '<f4>', function() -- ZenMode Distraction Free Writing
+	require("zen-mode").toggle({
+		window = {
+			width = .5 -- width will be x% of the editor width
+		}
+	})
+end)
 
+
+
+vim.keymap.set('n', '<f3>', ':NvimTreeToggle<cr>', { silent = true })
+vim.keymap.set('n', '<s-f3>', ':SymbolsOutline<cr>', { silent = true })
 
 
 
@@ -149,8 +160,6 @@ end)
 -- vim.keymap.set('n', '<leader>I', [[:call nerdcommenter#Comment(0,"insert")<cr>i]])
 
 
--- vim.keymap.set('n', '<f3>', ':NvimTreeToggle<cr>', { silent = true })
-
 
 -- -- Select a function
 -- vim.keymap.set('v', 'af', 'Va{V')
@@ -187,14 +196,6 @@ end)
 -- end)
 
 
-
--- vim.keymap.set('n', '<f4>', function() -- ZenMode Distraction Free Writing
-	-- require("zen-mode").toggle({
-		-- window = {
-			-- width = .5 -- width will be x% of the editor width
-		-- }
-	-- })
--- end)
 
 -- vim.keymap.set('n', '<f6>', function()
 	-- ToggleShowBreaks('  → ')
