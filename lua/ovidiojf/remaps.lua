@@ -1,4 +1,56 @@
----@diagnostic disable: undefined-global, undefined-field
+---@diagnostic disable: undefined-global
+
+vim.keymap.set('n', '<f9>', ':silent ToggleDiag<cr>')
+
+vim.keymap.set("n", "gd",              function() vim.lsp.buf.definition() end, opts)
+vim.keymap.set("n", "<leader>h",       function() vim.lsp.buf.hover() end, opts)
+vim.keymap.set("n", "<leader>vws",     function() vim.lsp.buf.workspace_symbol() end, opts)
+vim.keymap.set("n", "<leader>1",       function() vim.diagnostic.open_float() end, opts)
+vim.keymap.set("n", "<leader>rf",      function() vim.lsp.buf.references() end, opts)
+vim.keymap.set("n", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
+vim.keymap.set("v", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
+vim.keymap.set("n", "]d",              function() vim.diagnostic.goto_next() end, opts)
+vim.keymap.set("n", "[d",              function() vim.diagnostic.goto_prev() end, opts)
+vim.keymap.set("n", "<leader><enter>", function() vim.lsp.buf.code_action() end, opts)
+vim.keymap.set("n", "<leader>ca",      function() vim.lsp.buf.code_action() end, opts)
+vim.keymap.set("n", "<leader>R",       function() vim.lsp.buf.rename() end, opts)
+vim.keymap.set("i", "<C-h>",           function() vim.lsp.buf.signature_help() end, opts)
+
+
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files)
+vim.keymap.set('n', '<leader>fb', builtin.buffers)
+vim.keymap.set('n', '<leader>fd', builtin.diagnostics)
+vim.keymap.set('n', '<leader>frf', builtin.lsp_references)
+vim.keymap.set('n', '<leader>fws', builtin.lsp_workspace_symbols)
+vim.keymap.set('n', '<leader>gf', builtin.git_files)
+vim.keymap.set('n', '<leader>gc', builtin.git_commits)
+vim.keymap.set('n', '<leader>gs', builtin.git_status)
+vim.keymap.set('n', '<leader>fc', builtin.colorscheme)
+vim.keymap.set('n', '<leader>fk', builtin.keymaps)
+vim.keymap.set('n', '<leader>fhl', builtin.highlights)
+vim.keymap.set('n', '<leader>fg', function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") });
+end) -- Needs sudo pacman -S ripgrep
+
+
+local bgcolor = nil
+vim.keymap.set('n', '<f5>', function()
+	if bgcolor == nil then
+		bgcolor = 'black'
+	else
+		bgcolor = nil
+	end
+	vim.api.nvim_set_hl(0, 'Normal', { bg = bgcolor })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = bgcolor })
+end)
+
+
+
+
+
+
 -- vim.g.mapleader = ' '
 
 -- vim.keymap.set('n', '<c-z>', ':echo "do nothing :)"<cr>')
@@ -69,8 +121,6 @@
 -- -- Disable/Enable highlight in search
 -- vim.keymap.set('n', '<f8>', ':set hlsearch!<cr>', { silent = true })
 
--- vim.keymap.set('n', '<f9>', ':silent ToggleDiag<cr>')
-
 
 -- vim.keymap.set('n', '<leader>lw', function()
 	-- vim.opt.wrap = not vim.opt.wrap:get()
@@ -79,23 +129,6 @@
 
 -- -- Change a misspelling word to the first vim suggestion
 -- vim.keymap.set('n', '<leader>=', '1z=')
-
-
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files)
--- vim.keymap.set('n', '<leader>fb', builtin.buffers)
--- vim.keymap.set('n', '<leader>fd', builtin.diagnostics)
--- vim.keymap.set('n', '<leader>frf', builtin.lsp_references)
--- vim.keymap.set('n', '<leader>fws', builtin.lsp_workspace_symbols)
--- vim.keymap.set('n', '<leader>fgf', builtin.git_files)
--- vim.keymap.set('n', '<leader>fgc', builtin.git_commits)
--- vim.keymap.set('n', '<leader>fgs', builtin.git_status)
--- vim.keymap.set('n', '<leader>fc', builtin.colorscheme)
--- vim.keymap.set('n', '<leader>fk', builtin.keymaps)
--- vim.keymap.set('n', '<leader>fhl', builtin.highlights)
--- vim.keymap.set('n', '<leader>gr', function()
-	-- builtin.grep_string({ search = vim.fn.input("Grep > ") });
--- end) -- Needs sudo pacman -S ripgrep
 
 
 -- vim.keymap.set("n", "<leader>wr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -162,18 +195,6 @@
 		-- }
 	-- })
 -- end)
-
--- local bgcolor = nil
--- vim.keymap.set('n', '<f5>', function()
-	-- if bgcolor == nil then
-		-- bgcolor = 'black'
-	-- else
-		-- bgcolor = nil
-	-- end
-	-- vim.api.nvim_set_hl(0, 'Normal', { bg = bgcolor })
--- end)
-
-
 
 -- vim.keymap.set('n', '<f6>', function()
 	-- ToggleShowBreaks('  → ')

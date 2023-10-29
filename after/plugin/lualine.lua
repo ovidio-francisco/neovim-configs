@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 
 local colors = {
 	blue         = '#0083aa',
@@ -123,6 +124,7 @@ require('lualine').setup {
 }
 
 
+vim.opt.laststatus = 0
 
 
 

@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 	use 'lervag/vimtex'
 	use 'jiangmiao/auto-pairs'
 	use 'mattn/emmet-vim'
+	-- use 'xiyaowong/transparent.nvim'
 
 
 	use({

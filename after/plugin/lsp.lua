@@ -4,19 +4,19 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "gd",              function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "<leader>h",       function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws",     function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>1",       function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "<leader>rf",      function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
-  vim.keymap.set("v", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
-  vim.keymap.set("n", "]d",              function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "[d",              function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader><enter>", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>ca",      function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>R",       function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>",           function() vim.lsp.buf.signature_help() end, opts)
+  -- vim.keymap.set("n", "gd",              function() vim.lsp.buf.definition() end, opts)
+  -- vim.keymap.set("n", "<leader>h",       function() vim.lsp.buf.hover() end, opts)
+  -- vim.keymap.set("n", "<leader>vws",     function() vim.lsp.buf.workspace_symbol() end, opts)
+  -- vim.keymap.set("n", "<leader>1",       function() vim.diagnostic.open_float() end, opts)
+  -- vim.keymap.set("n", "<leader>rf",      function() vim.lsp.buf.references() end, opts)
+  -- vim.keymap.set("n", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
+  -- vim.keymap.set("v", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
+  -- vim.keymap.set("n", "]d",              function() vim.diagnostic.goto_next() end, opts)
+  -- vim.keymap.set("n", "[d",              function() vim.diagnostic.goto_prev() end, opts)
+  -- vim.keymap.set("n", "<leader><enter>", function() vim.lsp.buf.code_action() end, opts)
+  -- vim.keymap.set("n", "<leader>ca",      function() vim.lsp.buf.code_action() end, opts)
+  -- vim.keymap.set("n", "<leader>R",       function() vim.lsp.buf.rename() end, opts)
+  -- vim.keymap.set("i", "<C-h>",           function() vim.lsp.buf.signature_help() end, opts)
 
 
   vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
@@ -32,7 +32,8 @@ lsp_zero.set_sign_icons({
 })
 
 
---     
+--      ✘ ▲   💩
+
 
 vim.diagnostic.config({
      signs            = true,
@@ -49,7 +50,7 @@ vim.diagnostic.config({
 			 local message = diagnostic.message
 
 			 if     diagnostic.severity == vim.diagnostic.severity.ERROR then
-				 icon = '✘'
+				 icon = '💩'
 			 elseif diagnostic.severity == vim.diagnostic.severity.WARN then
 				 icon = '▲'
 			 elseif diagnostic.severity == vim.diagnostic.severity.HINT then
