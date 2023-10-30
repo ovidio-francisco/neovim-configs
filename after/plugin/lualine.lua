@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 
 local colors = {
 	blue         = '#0083aa',
