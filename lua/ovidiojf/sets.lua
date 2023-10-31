@@ -1,8 +1,11 @@
----@diagnostic disable: undefined-global
 -- vim.opt.guicursor = "n-v-ve-c-sm-o:block,i-ci:ver25,r-cr:hor20,i:blinkwait70-blinkoff40-blinkon25"
+vim.opt.guicursor = "n-v-ve-c-sm-o:block-nCursor,i-ci:block,r-cr:hor20,i:blinkwait0-blinkoff400-blinkon250"
 
 -- vim.opt.number = true
 -- vim.opt.relativenumber = true
+
+
+
 
 -- vim.opt.tabstop = 4
 -- vim.opt.softtabstop = 4
