@@ -1,5 +1,19 @@
 ---@diagnostic disable: undefined-global
+
 -- vim.opt.guicursor = "n-v-ve-c-sm-o:block,i-ci:ver25,r-cr:hor20,i:blinkwait70-blinkoff40-blinkon25"
+vim.opt.guicursor = "n-v-c-sm:block-nCursor,i-ci-ve:block-iCursor,r-cr-o:hor20"
+
+
+-- Run the command and capture its output
+-- local capslock_status = vim.fn.system('cat /sys/class/leds/input3::capslock/brightness')
+
+-- Trim any leading or trailing whitespace from the output
+-- capslock_status = capslock_status:gsub("^%s*(.-)%s*$", "%1")
+
+-- Now, capslock_status contains the output of the command
+-- You can use it as needed
+-- print("Capslock status is: " .. capslock_status)
+
 
 -- vim.opt.number = true
 -- vim.opt.relativenumber = true
