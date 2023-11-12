@@ -6,19 +6,21 @@ lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   vim.opt.signcolumn = 'yes' -- Reserve space for diagnostic icons
-
 end)
 
 
 --      ✘ ▲   💩         !
 
 lsp_zero.set_sign_icons({
-	error = '✘',
+	error = '💩',
 	warn  = '▲',
 	hint  = ' ',
 	info  = ''
 })
 
+
+
+--            ✘ ▲  💩
 
 vim.diagnostic.config({
      signs            = true,
@@ -34,14 +36,10 @@ vim.diagnostic.config({
 			 local icon = ''
 			 local message = diagnostic.message
 
-			 if     diagnostic.severity == vim.diagnostic.severity.ERROR then
-				 icon = '💩'
-			 elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-				 icon = '▲'
-			 elseif diagnostic.severity == vim.diagnostic.severity.HINT then
-				 icon = ''
-			 elseif diagnostic.severity == vim.diagnostic.severity.INFO then
-				 icon = ''
+			 if     diagnostic.severity == vim.diagnostic.severity.ERROR then icon = '✘'
+			 elseif diagnostic.severity == vim.diagnostic.severity.WARN  then icon = '▲'
+			 elseif diagnostic.severity == vim.diagnostic.severity.HINT  then icon = ''
+			 elseif diagnostic.severity == vim.diagnostic.severity.INFO  then icon = ''
 			 end
 
 			 return string.format('%s  %s', icon, message)
