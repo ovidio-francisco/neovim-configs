@@ -11,19 +11,27 @@ return require('packer').startup(function(use)
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 	use 'simrat39/symbols-outline.nvim'
 	use 'lervag/vimtex'
-	use 'jiangmiao/auto-pairs'
+	-- use 'jiangmiao/auto-pairs'
 	use 'mattn/emmet-vim'
-	-- use 'xiyaowong/transparent.nvim'
+	use 'xiyaowong/transparent.nvim' -- sometimes is not necessary (rose-pine)
+
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
 
 
+	--- Themes ---
+
+	-- use 'folke/tokyonight.nvim'
 	use({
 		'rose-pine/neovim',
 		as = 'rose-pine',
 		config = function()
-			-- require('rose-pine').setup({
-				-- disable_background = true,
-				-- disable_float_background = true,
-			-- })
+			require('rose-pine').setup({
+				disable_background = true,
+				disable_float_background = true,
+			})
 		end
 	})
 

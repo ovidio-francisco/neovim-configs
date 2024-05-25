@@ -53,7 +53,15 @@ local ojf = {
 		x = { bg = 'none', fg = colors.gray },
 		y = { bg = 'none', fg = colors.white },
 		z = { bg = 'none', fg = colors.white }
-	}
+	},
+	tabline = {
+		a = { bg = 'none', fg = colors.red },
+		b = { bg = 'none', fg = colors.red },
+		c = { bg = 'none', fg = colors.red },
+		x = { bg = 'none', fg = colors.red },
+		y = { bg = 'none', fg = colors.red },
+		z = { bg = 'none', fg = colors.red }
+	},
 }
 
 local function getBufCount()
@@ -121,10 +129,31 @@ require('lualine').setup {
 		lualine_y = {},
 		lualine_z = {}
 	},
+	tabline = {
+		lualine_a = {
+			{  'tabs',
+				component_separators = { left = '', right = '' },
+				max_length = vim.o.columns,
+				tabs_color = {
+					active =   { bg = 'none', fg = 'none' },
+					inactive = { bg = 'none', fg = colors.gray },
+				},
+				mode=2,
+				symbols = { modified = '' },
+				fmt = function(name, context)
+					-- Show + if buffer is modified in tab
+					local buflist = vim.fn.tabpagebuflist(context.tabnr)
+					local winnr = vim.fn.tabpagewinnr(context.tabnr)
+					local bufnr = buflist[winnr]
+					local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+					return name .. (mod == 1 and ' ●' or ' ')
+				end
+			},
+		},
+	}
 }
 
-
-vim.opt.laststatus = 0
 
 
 
