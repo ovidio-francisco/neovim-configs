@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>fs",      function() vim.lsp.buf.format()     end, 
 vim.keymap.set("v", "<leader>fs",      function() vim.lsp.buf.format()     end, opts)
 vim.keymap.set("n", "<leader><enter>", function() vim.lsp.buf.code_action() end, opts)
 vim.keymap.set("n", "<leader>ca",      function() vim.lsp.buf.code_action() end, opts)
-vim.keymap.set("n", "<leader>R",       function() vim.lsp.buf.rename() end, opts)
+vim.keymap.set("n", "<S-F2>",          function() vim.lsp.buf.rename() end, opts)
 vim.keymap.set("i", "<C-h>",           function() vim.lsp.buf.signature_help() end, opts)
 vim.keymap.set("n", "]d",              function() vim.diagnostic.goto_next() end, opts)
 vim.keymap.set("n", "[d",              function() vim.diagnostic.goto_prev() end, opts)
@@ -62,20 +62,90 @@ vim.keymap.set('n', '<s-f3>', ':SymbolsOutline<cr>', { silent = true })
 
 
 
--- vim.g.mapleader = ' '
 
--- vim.keymap.set('n', '<c-z>', ':echo "do nothing :)"<cr>')
+-- Toogle Status Bar
+vim.keymap.set('n', '<F12>', function()
+	local ll = vim.api.nvim_get_option('laststatus')
 
--- vim.keymap.set('n', '<s-tab>', '<c-w>w')
--- vim.keymap.set('i', '<s-tab>', '<esc><c-w>w')
+	if ll == 0 then
+		ll = 2
+		print("Status bar: always")
+	elseif ll == 1 then
+		ll = 0
+		print("Status bar: never")
+	elseif ll == 2 then
+		ll = 1
+		print("Status bar: if splitted")
+	end
 
--- vim.keymap.set('n', ' ', "<nop>")
--- vim.keymap.set('n', '<leader>dl', vim.cmd.Ex)
+	if ll > 0 then
+		local lualine_conf = require('ovidiojf.lualine_config')
+		local conf = lualine_conf.ConfigLuaLine(1, 0)
+		require('lualine').setup(conf)
+	end
 
--- vim.keymap.set('i', '<F1>', '<esc>')
--- vim.keymap.set('i', '<F2>', '<esc>:w<cr>')
+	vim.opt.laststatus = ll
+end)
 
--- vim.keymap.set('n', '<F2>', ':w<cr>')
+
+
+-- Toogle Status Bar
+vim.keymap.set('n', '<F11>', function()
+
+	local stl = vim.api.nvim_get_option('showtabline')
+
+	if stl == 0 then
+		stl = 2
+		print("Tabline: always")
+	elseif stl == 1 then
+		stl = 0
+		print("Tabline: never")
+	elseif stl == 2 then
+		stl = 1
+		print("Tabline: if more than 1 tab pages")
+	end
+
+	if stl > 0 then
+		local lualine_conf = require('ovidiojf.lualine_config')
+		local conf = lualine_conf.ConfigLuaLine(0, 1)
+		require('lualine').setup(conf)
+	end
+
+	require('lualine').hide({
+		place = {'tabline'}, -- The segment this change applies to.
+		unhide = stl > 0,  -- whether to re-enable lualine again/
+	})
+
+	  vim.opt.showtabline = stl
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	-- local lualine_conf = require('ovidiojf.lualine_config')
+	-- local myconf = lualine_conf.ConfigLuaLine(0, ShowTabLine)
+	-- require('lualine').setup(myconf)
+
+
+
+-- ll = vim.api.nvim_get_option('laststatus')
+-- stl = vim.api.nvim_get_option('showtabline')
 
 -- vim.keymap.set('n', '<leader><tab>', vim.cmd.bnext)
 -- vim.keymap.set('n', '<leader><s-tab>', vim.cmd.bprev)
