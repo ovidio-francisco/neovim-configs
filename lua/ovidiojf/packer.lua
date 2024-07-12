@@ -24,6 +24,13 @@ return require('packer').startup(function(use)
 
 
 	--- Themes ---
+	use {
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end
+	}
+
 
 	-- use 'folke/tokyonight.nvim'
 	use({

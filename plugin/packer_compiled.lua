@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/gwon/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/gwon/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/gwon/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?/init.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?.lua;/home/gwon/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/gwon/.cache/nvim/packer_hererocks/2.1.1716656478/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -118,6 +118,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gwon/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["monokai-pro.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16monokai-pro\frequire\0" },
+    loaded = true,
+    path = "/home/gwon/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
+    url = "https://github.com/loctvl842/monokai-pro.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -223,6 +229,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\nl\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\29disable_float_background\2\23disable_background\2\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: monokai-pro.nvim
+time([[Config for monokai-pro.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16monokai-pro\frequire\0", "config", "monokai-pro.nvim")
+time([[Config for monokai-pro.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

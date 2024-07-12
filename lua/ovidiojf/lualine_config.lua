@@ -54,14 +54,6 @@ local ojf = {
 		y = { bg = 'none', fg = colors.white },
 		z = { bg = 'none', fg = colors.white }
 	},
-	tabline = {
-		a = { bg = 'none', fg = colors.red },
-		b = { bg = 'none', fg = colors.red },
-		c = { bg = 'none', fg = colors.red },
-		x = { bg = 'none', fg = colors.red },
-		y = { bg = 'none', fg = colors.red },
-		z = { bg = 'none', fg = colors.red }
-	},
 }
 
 local function getBufCount()
@@ -106,14 +98,6 @@ local function getLangs()
 
 	return ''
 end
-
-
-
-
-
-
-
-
 
 
 
@@ -185,6 +169,7 @@ function ConfigLuaLine(laststatus, showtabline)
 	end
 
 	config.options = Statusline_options
+	-- config.winbar = Winbar_config
 
 	return config
 end
@@ -193,8 +178,6 @@ end
 
 -- local myconf = ConfigLuaLine(0, 1)
 -- require('lualine').setup(myconf)
-
-
 
 
 

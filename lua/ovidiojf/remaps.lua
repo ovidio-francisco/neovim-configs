@@ -61,8 +61,6 @@ vim.keymap.set('n', '<s-f3>', ':SymbolsOutline<cr>', { silent = true })
 
 
 
-
-
 -- Toogle Status Bar
 vim.keymap.set('n', '<F12>', function()
 	local ll = vim.api.nvim_get_option('laststatus')
@@ -89,7 +87,7 @@ end)
 
 
 
--- Toogle Status Bar
+-- Toogle Tab Bar
 vim.keymap.set('n', '<F11>', function()
 
 	local stl = vim.api.nvim_get_option('showtabline')
@@ -118,6 +116,12 @@ vim.keymap.set('n', '<F11>', function()
 
 	  vim.opt.showtabline = stl
 end)
+
+
+-- Toogle Win Bar
+-- vim.keymap.set('n', '<F10>', function()
+
+-- end)
 
 
 

@@ -22,9 +22,9 @@ end
 require("nvim-tree").setup({
 	on_attach = my_on_attach,
 	sort_by = "case_sensitive",
-	disable_netrw = false,
+	disable_netrw = true,
 	hijack_cursor = false,
-	hijack_netrw = false,
+	hijack_netrw = true,
 
 	respect_buf_cwd = true,
 
@@ -56,14 +56,22 @@ require("nvim-tree").setup({
 			},
 			glyphs = {
 				modified = "+",
+
+				folder = {
+					arrow_closed = "▸",
+					arrow_open = "▾",
+				},
+
 				git = {
 					unstaged = "",
 					staged = "✓",
 					unmerged = "",
 					renamed = "➜",
 					untracked = "★",
-					deleted = "",
+					deleted = " ",
 					ignored = "◌",
+					-- untracked = "⋆",
+					-- deleted = "-",
 				},
 			},
 		}
