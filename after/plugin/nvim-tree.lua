@@ -44,7 +44,7 @@ require("nvim-tree").setup({
 	   [     },
 	   [ },   ]]
 	renderer = {
-		group_empty = false,
+		group_empty = true,
 		icons = {
 			symlink_arrow = " → ",
 			show = {
@@ -63,15 +63,17 @@ require("nvim-tree").setup({
 				},
 
 				git = {
-					unstaged = "",
-					staged = "✓",
-					unmerged = "",
-					renamed = "➜",
-					untracked = "★",
-					deleted = " ",
-					ignored = "◌",
-					-- untracked = "⋆",
+					-- unstaged = "*",
+					-- untracked = "·",
 					-- deleted = "-",
+
+					unstaged  = "",
+					untracked = " ★",
+					deleted   = " ",
+					staged   = "✓",
+					unmerged = "",
+					renamed  = "➜",
+					ignored = "◌",
 				},
 			},
 		}
