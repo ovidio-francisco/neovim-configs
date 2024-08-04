@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 	use 'lervag/vimtex'
 	-- use 'jiangmiao/auto-pairs'
 	use 'mattn/emmet-vim'
-	use 'xiyaowong/transparent.nvim' -- sometimes is not necessary (rose-pine)
+	-- use 'xiyaowong/transparent.nvim' -- sometimes is not necessary (rose-pine)
 
 	use {
 		"windwp/nvim-autopairs",
