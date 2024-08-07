@@ -17,6 +17,13 @@ return require('packer').startup(function(use)
 	use 'mattn/emmet-vim'
 	-- use 'xiyaowong/transparent.nvim' -- sometimes is not necessary (rose-pine)
 
+	use({
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
+
+
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
