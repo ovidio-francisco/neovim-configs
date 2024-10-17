@@ -22,9 +22,9 @@ lsp_zero.set_sign_icons({
 --            ✘ ▲  💩
 
 vim.diagnostic.config({
-     signs            = true,
-     underline        = true,
-     update_in_insert = true,
+	 signs            = true,
+	 underline        = true,
+	 update_in_insert = true,
 	 severity_sort    = true,
 
 	 virtual_text = {
@@ -54,7 +54,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
   handlers = {
-    lsp_zero.default_setup,
+	lsp_zero.default_setup,
   },
 })
 
@@ -64,25 +64,17 @@ local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
   sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
+	{name = 'path'},
+	{name = 'nvim_lsp'},
+	{name = 'nvim_lua'},
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
 	  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	  ['<C-m>'] = cmp.mapping.confirm({ select = true }),
-	  ['<C-c>'] = cmp.mapping.confirm({ select = true }),
-	  ['<f10>'] = cmp.mapping.confirm({ select = true }),
 	  ['<CR>']  = cmp.mapping.confirm({ select = true }),
-	  ['<tab>'] = cmp.mapping.confirm({ select = true }),
 	  ["<C-y>"] = nil,
 	  ["<C-e>"] = nil,
 	  ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
-
-
-
-

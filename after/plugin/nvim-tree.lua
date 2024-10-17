@@ -15,6 +15,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 'v',     api.node.open.vertical,                opts('Open: Vertical Split'))
   vim.keymap.set('n', 's',     api.node.open.vertical,                opts('Open: Vertical Split'))
   vim.keymap.set('n', '<C-s>', api.node.run.system,                   opts('Run System'))
+  vim.keymap.set('n', 'l',     api.node.open.edit,                    opts('Open'))
 
 end
 
