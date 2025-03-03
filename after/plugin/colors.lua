@@ -8,7 +8,13 @@ vim.api.nvim_set_hl(0, 'ModeMsg', { bold=true, fg = "white" })
 
 -- vim.api.nvim_set_hl(0, 'CursorLine', { bg = "#222222" })
 
-vim.api.nvim_set_hl(0, 'iCursor', { bg = "#d27632" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#d27632" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#f23322" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#c24332" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#E6AE3C" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#E65C3C" })
+vim.api.nvim_set_hl(0, 'iCursor', { bg = "#F5C631" })
+-- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#F5DF32" })
 
 vim.api.nvim_set_hl(0, 'WinBar', { bold = true, bg = "none" })
 
