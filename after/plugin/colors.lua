@@ -8,32 +8,6 @@ vim.api.nvim_set_hl(0, 'ModeMsg', { bold=true, fg = "white" })
 
 -- vim.api.nvim_set_hl(0, 'CursorLine', { bg = "#222222" })
 
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#d27632" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#f23322" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#c24332" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#E6AE3C" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#E65C3C" })
-vim.api.nvim_set_hl(0, 'iCursor', { bg = "#F5C631" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#F5DF32" })
-
 vim.api.nvim_set_hl(0, 'WinBar', { bold = true, bg = "none" })
 
-
-
-
-
--- vim.api.nvim_set_hl(0, 'Special', { fg = "#eb6f92" })
-
--- vim.api.nvim_set_hl(0, 'nCursor', { bg = "#f6c177" })
--- vim.api.nvim_set_hl(0, 'nCursor', { bg = "DarkCyan" })
--- vim.api.nvim_set_hl(0, 'nCursor', { bg = "White" })
-
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "Orange" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#f6c177" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "White" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#E66100" })
--- vim.api.nvim_set_hl(0, 'iCursor', { bg = "#e07016" })
-
--- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
