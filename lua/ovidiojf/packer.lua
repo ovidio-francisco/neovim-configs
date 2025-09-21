@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 
 
 
-use { 'mfussenegger/nvim-jdtls' }
+-- use { 'mfussenegger/nvim-jdtls' }
 
 
 
