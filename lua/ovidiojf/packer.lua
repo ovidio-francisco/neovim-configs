@@ -11,11 +11,48 @@ return require('packer').startup(function(use)
 	use 'dkarter/bullets.vim'
 	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-	use 'simrat39/symbols-outline.nvim'
+	-- use 'simrat39/symbols-outline.nvim'
 	use 'lervag/vimtex'
 	-- use 'jiangmiao/auto-pairs'
 	use 'mattn/emmet-vim'
 	-- use 'xiyaowong/transparent.nvim' -- sometimes is not necessary (rose-pine)
+
+
+
+-- REMOVA/COMENTE o antigo: 'simrat39/symbols-outline.nvim'
+-- use({
+  -- 'hedyhli/symbols-outline.nvim',
+  -- config = function()
+	-- require('symbols-outline').setup()
+  -- end,
+-- })
+
+-- require("packer").startup(function()
+  -- use({
+    -- "stevearc/aerial.nvim",
+    -- config = function()
+      -- require("aerial").setup()
+    -- end,
+  -- })
+-- end)
+
+
+  use({
+    'stevearc/aerial.nvim',
+    config = function()
+      require('aerial').setup({})
+      vim.keymap.set('n', '<leader>o', '<cmd>AerialToggle!<CR>')
+    end,
+  })
+
+
+
+
+use { 'mfussenegger/nvim-jdtls' }
+
+
+
+
 
 	use({
 		"nvim-treesitter/nvim-treesitter-textobjects",

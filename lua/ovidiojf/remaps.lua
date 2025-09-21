@@ -57,7 +57,7 @@ end)
 
 
 vim.keymap.set('n', '<f3>', ':NvimTreeToggle<cr>', { silent = true })
-vim.keymap.set('n', '<s-f3>', ':SymbolsOutline<cr>', { silent = true })
+vim.keymap.set('n', '<s-f3>', ':AerialToggle<cr>', { silent = true })
 
 
 

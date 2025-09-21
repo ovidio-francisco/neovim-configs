@@ -80,3 +80,17 @@ cmp.setup({
 	  ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
+
+
+
+local jdtls = require('jdtls')
+
+local root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'pom.xml'})
+local home = os.getenv('HOME')
+
+local config = {
+  cmd = { 'jdtls' },
+  root_dir = root_dir,
+}
+
+jdtls.start_or_attach(config)
