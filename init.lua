@@ -1,5 +1,6 @@
 ---@diagnostic disable: undefined-global
 
+
 vim.cmd('source ~/.vimrc')
 
 require('ovidiojf')

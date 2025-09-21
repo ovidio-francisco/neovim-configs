@@ -83,14 +83,15 @@ cmp.setup({
 
 
 
-local jdtls = require('jdtls')
+-- local jdtls = require('jdtls')
 
-local root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'pom.xml'})
-local home = os.getenv('HOME')
+-- local root_dir = jdtls.setup.find_root({'.git', 'mvnw', 'pom.xml'})
+-- local home = os.getenv('HOME')
 
-local config = {
-  cmd = { 'jdtls' },
-  root_dir = root_dir,
-}
+-- local config = {
+  -- cmd = { 'jdtls' },
+  -- root_dir = root_dir,
+-- }
 
-jdtls.start_or_attach(config)
+-- jdtls.start_or_attach(config)
+
