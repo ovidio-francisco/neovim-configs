@@ -80,7 +80,6 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["aerial.nvim"] = {
-    config = { "\27LJ\2\n�\4\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vlayout\1\0\2\22default_direction\17prefer_right\22resize_to_content\2\nicons\1\0\26\vMethod\aƒ\rFunction\t󰊕\16Constructor\b\14Collapsed\b\nField\t󰆨\15EnumMember\b\fBoolean\b⊨\vNumber\6#\nArray\b\bKey\b\rConstant\b\tNull\b\vModule\b\rOperator\b\rProperty\b\vStruct\b\tEnum\b\nEvent\b\18TypeParameter\b\vObject\b⦿\rVariable\b\14Namespace\b\14Interface\b\nClass\b[C]\vString\b\fPackage\b\rbackends\1\0\4\14nerd_font\tauto\rbackends\0\vlayout\0\nicons\0\1\6\0\0\15treesitter\blsp\rmarkdown\rasciidoc\bman\nsetup\vaerial\frequire\0" },
     loaded = true,
     path = "/home/gwon/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
@@ -227,18 +226,14 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\nl\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\23disable_background\2\29disable_float_background\2\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
 -- Config for: monokai-pro.nvim
 time([[Config for monokai-pro.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16monokai-pro\frequire\0", "config", "monokai-pro.nvim")
 time([[Config for monokai-pro.nvim]], false)
--- Config for: aerial.nvim
-time([[Config for aerial.nvim]], true)
-try_loadstring("\27LJ\2\n�\4\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\vlayout\1\0\2\22default_direction\17prefer_right\22resize_to_content\2\nicons\1\0\26\vMethod\aƒ\rFunction\t󰊕\16Constructor\b\14Collapsed\b\nField\t󰆨\15EnumMember\b\fBoolean\b⊨\vNumber\6#\nArray\b\bKey\b\rConstant\b\tNull\b\vModule\b\rOperator\b\rProperty\b\vStruct\b\tEnum\b\nEvent\b\18TypeParameter\b\vObject\b⦿\rVariable\b\14Namespace\b\14Interface\b\nClass\b[C]\vString\b\fPackage\b\rbackends\1\0\4\14nerd_font\tauto\rbackends\0\vlayout\0\nicons\0\1\6\0\0\15treesitter\blsp\rmarkdown\rasciidoc\bman\nsetup\vaerial\frequire\0", "config", "aerial.nvim")
-time([[Config for aerial.nvim]], false)
+-- Config for: rose-pine
+time([[Config for rose-pine]], true)
+try_loadstring("\27LJ\2\nl\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\23disable_background\2\29disable_float_background\2\nsetup\14rose-pine\frequire\0", "config", "rose-pine")
+time([[Config for rose-pine]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

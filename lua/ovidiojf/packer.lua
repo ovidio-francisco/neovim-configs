@@ -32,61 +32,11 @@ return require('packer').startup(function(use)
 use({
   "stevearc/aerial.nvim",
   requires = {
-	"nvim-tree/nvim-web-devicons",     -- icons (optional, but recommended)
-    "nvim-treesitter/nvim-treesitter", -- symbols via TS (optional)
+    "nvim-tree/nvim-web-devicons",
+    "nvim-treesitter/nvim-treesitter",
   },
-  config = function()
-    require("aerial").setup({
-      -- Prefer Treesitter, then LSP (README’s default)
-      backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
-
-      -- Use Nerd Font icons automatically if devicons/lspkind is present
-      nerd_font = "auto",
-
-      -- Your custom icons (Nerd Font v3 “codicon”-style)
-      icons = {
-        Class         = "[C]",
-        Interface     = "",
-        Module        = "",
-        Namespace     = "",
-        Package       = "",
-        Method        = "ƒ",
-        Function      = "󰊕",
-        Constructor   = "",
-        Field         = "󰆨",
-        Property      = "",
-        Variable      = "",
-        Constant      = "",
-        String        = "",
-        Number        = "#",
-        Boolean       = "⊨",
-        Array         = "",
-        Object        = "⦿",
-        Key           = "",
-        Null          = "",
-        Enum          = "",
-        EnumMember    = "",
-        Struct        = "",
-        Event         = "",
-        Operator      = "",
-        TypeParameter = "",
-        Collapsed     = "",
-		-- Number        = "",
-		-- Boolean       = "",
-        -- Class         = "",
-        -- Class         = "𝓒",
-        -- Method        = "",
-        -- Field         = "",
-        -- File          = '󰈔', 
-        -- EnumMember    = '',
-        -- Macro         = ' ',
-      },
-
-      layout = { default_direction = "prefer_right", resize_to_content = true },
-    })
-
-  end,
 })
+
 
 
 
