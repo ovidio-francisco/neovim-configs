@@ -19,31 +19,79 @@ return require('packer').startup(function(use)
 
 
 
--- REMOVA/COMENTE o antigo: 'simrat39/symbols-outline.nvim'
--- use({
-  -- 'hedyhli/symbols-outline.nvim',
-  -- config = function()
-	-- require('symbols-outline').setup()
-  -- end,
--- })
 
--- require("packer").startup(function()
   -- use({
-    -- "stevearc/aerial.nvim",
+    -- 'stevearc/aerial.nvim',
     -- config = function()
-      -- require("aerial").setup()
+      -- require('aerial').setup({})
+      -- vim.keymap.set('n', '<leader>o', '<cmd>AerialToggle!<CR>')
     -- end,
   -- })
--- end)
 
 
-  use({
-    'stevearc/aerial.nvim',
-    config = function()
-      require('aerial').setup({})
-      vim.keymap.set('n', '<leader>o', '<cmd>AerialToggle!<CR>')
-    end,
-  })
+use({
+  "stevearc/aerial.nvim",
+  requires = {
+	"nvim-tree/nvim-web-devicons",     -- icons (optional, but recommended)
+    "nvim-treesitter/nvim-treesitter", -- symbols via TS (optional)
+  },
+  config = function()
+    require("aerial").setup({
+      -- Prefer Treesitter, then LSP (README’s default)
+      backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
+
+      -- Use Nerd Font icons automatically if devicons/lspkind is present
+      nerd_font = "auto",
+
+      -- Your custom icons (Nerd Font v3 “codicon”-style)
+      icons = {
+        Class         = "[C]",
+        Interface     = "",
+        Module        = "",
+        Namespace     = "",
+        Package       = "",
+        Method        = "ƒ",
+        Function      = "󰊕",
+        Constructor   = "",
+        Field         = "󰆨",
+        Property      = "",
+        Variable      = "",
+        Constant      = "",
+        String        = "",
+        Number        = "#",
+        Boolean       = "⊨",
+        Array         = "",
+        Object        = "⦿",
+        Key           = "",
+        Null          = "",
+        Enum          = "",
+        EnumMember    = "",
+        Struct        = "",
+        Event         = "",
+        Operator      = "",
+        TypeParameter = "",
+        Collapsed     = "",
+		-- Number        = "",
+		-- Boolean       = "",
+        -- Class         = "",
+        -- Class         = "𝓒",
+        -- Method        = "",
+        -- Field         = "",
+        -- File          = '󰈔', 
+        -- EnumMember    = '',
+        -- Macro         = ' ',
+      },
+
+      layout = { default_direction = "prefer_right", resize_to_content = true },
+    })
+
+  end,
+})
+
+
+
+
+
 
 
 
