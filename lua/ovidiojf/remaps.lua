@@ -2,8 +2,6 @@
 
 vim.keymap.set('n', ';',  ':CommentToggle<cr>')
 vim.keymap.set('v', ';',  ':CommentToggle<cr>')
-vim.keymap.set('n', '<tab>',  ';')
-vim.keymap.set('v', '<tab>',  ';')
 
 vim.keymap.set('n', '<f9>', ':silent ToggleDiag<cr>')
 
@@ -321,3 +319,5 @@ end)
 		-- vim.opt.showmode = true
 	-- end
 -- end)
+
+
