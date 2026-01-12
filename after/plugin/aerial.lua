@@ -12,23 +12,45 @@ aerial.setup({
         Namespace     = "", Package       = "", Method        = "ƒ",
         Function      = "󰊕", Constructor   = "", Field         = "󰆨",
         Property      = "", Variable      = "", Constant      = "",
-        String        = "", Number        = "#", Boolean       = "⊨",
+        String        = "", Number        = "#", Boolean       = "⊨",
         Array         = "", Object        = "⦿", Key           = "",
         Null          = "", Enum          = "", EnumMember    = "",
         Struct        = "", Event         = "", Operator      = "",
         TypeParameter = "", Collapsed     = "",
   },
   layout = { default_direction = "prefer_right", resize_to_content = true },
+
+  filter_kind = false,  -- show all symbol kinds
+
+  -- filter_kind = {
+	-- "Class",
+	-- "Constructor",
+	-- "Enum",
+	-- "Function",
+	-- "Interface",
+	-- "Module",
+	-- "Method",
+	-- "Struct",
+	-- "Field",
+	-- "Struct",
+	-- "Enum",
+	-- "EnumMember",
+  -- },
+
+  attach_mode = "global",   -- follow focus across splits
+  -- optional: how the cursor markers behave with multiple splits
+  highlight_mode = "last",  -- or "split_width"
+
 })
 
-
-		-- -- Number        = "",
-		-- -- Boolean       = "",
-        -- -- Class         = "",
-        -- -- Class         = "𝓒",
-        -- -- Method        = "",
-        -- -- Field         = "",
-        -- -- File          = '󰈔', 
-        -- -- EnumMember    = '',
-        -- -- Macro         = ' ',
+		-- String        = "",
+		-- Number        = "",
+		-- Boolean       = "",
+        -- Class         = "",
+        -- Class         = "𝓒",
+        -- Method        = "",
+        -- Field         = "",
+        -- File          = '󰈔', 
+        -- EnumMember    = '',
+        -- Macro         = ' ',
 
