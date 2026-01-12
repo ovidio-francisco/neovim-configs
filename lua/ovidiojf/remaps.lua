@@ -1,5 +1,10 @@
 ---@diagnostic disable: undefined-global
 
+vim.keymap.set('n', ';',  ':CommentToggle<cr>')
+vim.keymap.set('v', ';',  ':CommentToggle<cr>')
+vim.keymap.set('n', '<tab>',  ';')
+vim.keymap.set('v', '<tab>',  ';')
+
 vim.keymap.set('n', '<f9>', ':silent ToggleDiag<cr>')
 
 vim.keymap.set("n", "gd",              function() vim.lsp.buf.definition() end, opts)
